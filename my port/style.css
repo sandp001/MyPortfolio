@@ -1,0 +1,699 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        color: #333;
+        background-color: rgba(28, 70, 70, 0.864);
+      }
+
+      /* utility classes ------------------ */
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #3b6ded;
+        color: #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #333;
+        color: #fff;
+        box-shadow: 0 0 20px white;
+      }
+
+      /* ----------------- header ------------------- */
+      .container {
+        background-color: rgba(28, 70, 70, 0.984);
+        min-height: 100vh;
+        padding: 0 20px;
+      }
+
+      .header {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+
+      .header img {
+        height: 10rem;
+        width: 10rem;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.393);
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      /* Hamburger Menu Icon */
+      .menu-icon {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 1000;
+      }
+
+      .menu-icon span {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+        border-radius: 3px;
+      }
+
+      .menu-icon.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .menu-icon.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-icon.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+
+      nav {
+        display: flex;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      nav ul li a {
+        text-transform: capitalize;
+      }
+
+      /* -------- about section */
+      .about {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px 30px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        border-radius: 10px;
+      }
+
+      .about img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 10%;
+        box-shadow: 0 0 20px white;
+      }
+
+      .about .abt {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .about .abt h1 {
+        font-size: 5rem;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+      }
+
+      .about .abt h2 {
+        display: inline-block;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: snow;
+        min-height: 3.5rem;
+        box-shadow: 0 0 20px white;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding: 5px 15px;
+      }
+
+      /* education ------------------------------------------ */
+      .eduhead {
+        max-width: 100%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        text-align: center;
+        color: #fff;
+        text-decoration: underline;
+        font-size: 4rem;
+      }
+
+      .educdiv {
+        max-width: 1200px;
+        padding: 30px;
+        margin: 0 auto 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        border-radius: 10px;
+        min-height: auto;
+      }
+
+      .edusticker {
+        background: rgb(193, 241, 219);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        min-height: 120px;
+      }
+
+      .edusticker:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .edusticker .head {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #084f48;
+        min-width: 150px;
+        text-align: center;
+        padding: 10px;
+        background: rgba(8, 79, 72, 0.1);
+        border-radius: 10px;
+      }
+
+      .edusticker i {
+        color: #084f48;
+        font-size: 4rem;
+        min-width: 60px;
+        text-align: center;
+      }
+
+      .edusticker .detail {
+        flex: 1;
+      }
+
+      .edusticker .detail h3 {
+        color: green;
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+      }
+
+      .edusticker .detail p {
+        color: #555;
+        font-size: 1.5rem;
+      }
+
+      /* skill card ------------------------------------------------- */
+      .skillhead {
+        max-width: 100%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        text-align: center;
+        color: #fff;
+        text-decoration: underline;
+        font-size: 4rem;
+      }
+
+      .skill {
+        max-width: 1200px;
+        padding: 30px;
+        margin: 0 auto 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        border-radius: 10px;
+      }
+
+      .skill-card {
+        width: 120px;
+        height: 140px;
+        background-color: #3b6ded;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        transition: all 0.3s ease;
+        padding: 15px;
+      }
+
+      .skill-card:hover {
+        transform: scale(1.1);
+        box-shadow: 0 15px 25px rgba(70, 36, 36, 0.947);
+      }
+
+      .skill-icon {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+      }
+
+      .skill-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+      }
+
+      /* project */
+      .projhead {
+        max-width: 100%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        text-align: center;
+        color: #fff;
+        text-decoration: underline;
+        font-size: 4rem;
+      }
+
+      .project {
+        max-width: 1200px;
+        padding: 30px;
+        margin: 0 auto 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        border-radius: 10px;
+      }
+
+      .project-card {
+        width: 300px;
+        background: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 25px rgba(70, 36, 36, 0.947);
+      }
+
+      .project-image {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+      }
+
+      .project-content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .project-title {
+        font-size: 2.2rem;
+        color: #376be6;
+        margin: 0 0 15px;
+        text-transform: capitalize;
+      }
+
+      .project-link {
+        text-decoration: none;
+        color: #fff;
+        background-color: #3b6ded;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        font-weight: bold;
+      }
+
+      .project-link:hover {
+        background-color: #2855d8;
+        box-shadow: 0 0 20px rgba(59, 109, 237, 0.6);
+      }
+
+      /* contact */
+      .contacthead {
+        max-width: 100%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        text-align: center;
+        color: #fff;
+        text-decoration: underline;
+        font-size: 4rem;
+      }
+
+      .card2 {
+        width: 100%;
+        padding: 30px 20px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .social-icons {
+        margin-bottom: 40px;
+        background-color: #3b6ded;
+        max-width: 900px;
+        margin: 0 auto 40px;
+        border-radius: 20px;
+        padding: 30px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .social-icons a {
+        font-size: 5rem;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 20px white;
+      }
+
+      .contact-info {
+        margin-top: 30px;
+        font-size: 2rem;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 800px;
+        margin: 30px auto;
+      }
+
+      .contact-info div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        background: rgba(59, 109, 237, 0.3);
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .contact-info i {
+        color: #3b6ded;
+        font-size: 3rem;
+      }
+
+      /* footer */
+      footer {
+        width: 100%;
+        padding: 20px;
+        border-top: 2px solid #fff;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      footer a {
+        color: #fff;
+        font-size: 1.8rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #3b6ded;
+      }
+
+      /* animation */
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .about,
+      .skill,
+      .project,
+      .contact-info,
+      .skill-card,
+      .project-card,
+      .edusticker {
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      /* --------------- Responsive Design --------------- */
+
+      @media (max-width: 992px) {
+        .about {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+
+        .about img {
+          max-width: 350px;
+        }
+
+        .about .abt h1 {
+          font-size: 4rem;
+        }
+
+        .edusticker {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .edusticker .head {
+          min-width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        html {
+          font-size: 55%;
+        }
+
+        /* Hamburger Menu Show */
+        .menu-icon {
+          display: flex;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 70%;
+          height: 100vh;
+          background-color: rgba(28, 70, 70, 0.98);
+          transition: right 0.3s ease;
+          z-index: 999;
+          padding-top: 80px;
+        }
+
+        nav.active {
+          right: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 30px;
+          padding: 20px;
+        }
+
+        nav ul li {
+          width: 100%;
+          text-align: center;
+        }
+
+        nav ul li a {
+          display: block;
+          padding: 15px;
+          font-size: 1.8rem;
+        }
+
+        .header img {
+          height: 8rem;
+          width: 8rem;
+        }
+
+        .about .abt h1 {
+          font-size: 3.5rem;
+        }
+
+        .about .abt h2 {
+          font-size: 1.8rem;
+        }
+
+        .eduhead,
+        .skillhead,
+        .projhead,
+        .contacthead {
+          font-size: 3.5rem;
+        }
+
+        .edusticker .head {
+          font-size: 1.8rem;
+        }
+
+        .edusticker i {
+          font-size: 3.5rem;
+        }
+
+        .edusticker .detail h3 {
+          font-size: 1.6rem;
+        }
+
+        .skill-card {
+          width: 110px;
+          height: 130px;
+        }
+
+        .project-card {
+          width: 100%;
+          max-width: 350px;
+        }
+
+        .social-icons {
+          gap: 20px;
+        }
+
+        .social-icons a {
+          font-size: 4rem;
+        }
+
+        .contact-info {
+          font-size: 1.6rem;
+        }
+
+        .contact-info i {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        html {
+          font-size: 50%;
+        }
+
+        .container {
+          padding: 0 10px;
+        }
+
+        .header {
+          padding: 15px 0;
+        }
+
+        .header img {
+          height: 7rem;
+          width: 7rem;
+        }
+
+        nav {
+          width: 85%;
+        }
+
+        .about {
+          padding: 15px;
+          margin: 30px auto;
+        }
+
+        .about img {
+          max-width: 100%;
+        }
+
+        .about .abt h1 {
+          font-size: 3rem;
+        }
+
+        .eduhead,
+        .skillhead,
+        .projhead,
+        .contacthead {
+          font-size: 3rem;
+          margin-top: 60px;
+          margin-bottom: 30px;
+        }
+
+        .educdiv,
+        .skill,
+        .project {
+          padding: 20px 15px;
+          margin-bottom: 60px;
+        }
+
+        .edusticker {
+          padding: 15px;
+          gap: 15px;
+        }
+
+        .edusticker .head {
+          font-size: 1.6rem;
+          padding: 8px;
+        }
+
+        .edusticker i {
+          font-size: 3rem;
+          min-width: 50px;
+        }
+
+        .skill-card {
+          width: 100px;
+          height: 120px;
+        }
+
+        .skill-icon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .skill-name {
+          font-size: 1.2rem;
+        }
+
+        .social-icons {
+          padding: 20px 10px;
+          gap: 15px;
+        }
+
+        .social-icons a {
+          font-size: 3.5rem;
+        }
+
+        .contact-info {
+          font-size: 1.4rem;
+          gap: 15px;
+        }
+
+        .contact-info div {
+          padding: 12px;
+          flex-direction: column;
+          text-align: center;
+        }
+      }
